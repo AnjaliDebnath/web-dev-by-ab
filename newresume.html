@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Form</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <h2>Skills:</h2>
+            <label for="skill1">Skill 1:</label>
+            <input type="text" id="skill1" name="skill1">
+
+            <label for="skill2">Skill 2:</label>
+            <input type="text" id="skill2" name="skill2">
+
+            <!-- Add more skill input fields as needed -->
+
+            <h2>Work Experience:</h2>
+            <label for="experience1">Experience 1:</label>
+            <textarea id="experience1" name="experience1" rows="4"></textarea>
+
+            <label for="experience2">Experience 2:</label>
+            <textarea id="experience2" name="experience2" rows="4"></textarea>
+
+            <!-- Add more work experience input fields as needed -->
+
+            <h2>Education:</h2>
+            <label for="education1">Education 1:</label>
+            <textarea id="education1" name="education1" rows="4"></textarea>
+
+            <label for="education2">Education 2:</label>
+            <textarea id="education2" name="education2" rows="4"></textarea>
+
+            <!-- Add more education input fields as needed -->
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
