@@ -1,1 +1,1 @@
-var name=
+console.log("hello");
