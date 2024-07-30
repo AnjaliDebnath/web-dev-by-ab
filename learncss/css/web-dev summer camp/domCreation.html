@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+  <head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta
+      name="description"
+      content="This content is used by the search engines"
+    />
+    <style>
+      #header-id-2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        /* other styling properties as needed */
+      }
+
+      .header-class-2 h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: blue;
+        /* other styling properties as needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header"> This is the header div</div>
+    <div class="container">
+      <h2>Heading inside div-2</h2>
+      <p>This is a paragraph</p>
+      <p>This is another paragraph</p>
+      <div>
+        <p>This is a paragraph inside div which is also inside a div</p>
+        <p>This is another paragraph inside div which is also inside a div</p>
+      </div>
+    </div>
+    <br>
+
+    <div class="random" style="border: 4px solid red;"> This is a div with inline css</div>
+
+    <br>
+    <script >
+
+        //creating a new element
+        // const body=document.body;
+        // const newElem= document.createElement("div");
+        // body.appendChild(newElem);
+        // newElem.textContent="this is a new div";
+
+        // const bodyElem=newElem.parentElement;
+        // const firstChildOfBody= bodyElem.firstElementChild;
+        // firstChildOfBody.appendChild(newElem);
+
+        //create an element and add i it between h2 and p
+
+        const body=document.body;
+        const secondDiv= body.children[1];
+        const nyaElement= document.createElement("p");
+        nyaElement.textContent="meow meow";
+        secondDiv.appendChild(nyaElement);
+        secondDiv.insertBefore(nyaElement, secondDiv.children[1]);
+
+        
+    </script>
+  </body>
+</html>

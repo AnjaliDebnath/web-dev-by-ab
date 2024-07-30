@@ -17,7 +17,7 @@ parentDiv.style.height = "400px";
 parentDiv.style.display = "grid";
 parentDiv.style.gridTemplateColumns = "repeat(8, 50px)";
 
-num=1;
+let num=1;
 for(let i=0; i<8; i++){
     for(let j=0; j<8; j++){
         let cell= document.createElement("div");
