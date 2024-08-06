@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: rgb(162, 252, 252);
+        align-items: center;
+        justify-content: center;
+      }
+      .weather-info {
+        margin-top: 20px;
+        background: rgb(236, 236, 176);
+        height: 300px;
+        width: 300px;
+        align-content: center;
+        padding: 20px;
+
+      }
+      #btn{
+        border-radius: 20px;
+        background: rgb(249, 154, 212);
+        height: 30px;
+        width: 120px;
+        
+      }
+      #city{
+        border-radius: 20px;
+        height: 30px;
+      }
+      #input{
+        font-size: 30px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1 >Weather App</h1>
+    <form id="weather-form">
+      <label for="city" id="input">Enter city name:</label>
+      <input type="text" id="city" name="city" required />
+      <button id="btn" type="submit">Get Weather</button>
+      <div id="info"></div>
+    </form>
+    <div class="weather-info" id="weather-info"></div>
+
+    <script>
+      const formElem = document.querySelector("#weather-form");
+      const btn = document.querySelector("#btn");
+      
+      function getCity(event){
+        event.preventDefault();
+        console.log(event);
+        const cityInput = document.querySelector("#city");
+        const city=cityInput.value;
+        
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=27345421359c6aa37d67bde8514ed4d0`;
+        
+        weather(url);
+      }
+      
+      formElem.addEventListener("submit",getCity);
+      
+      async function weather(url) {
+        const data = await fetch(url);
+        console.log(data);
+        const response = await data.json();
+        console.log(response);
+
+        const temp = response.main.temp;
+        // console.log(temp);
+        // const sysContent = response.sys;
+        const ctry= response.sys.country;
+        const tzone= response.timezone;
+        const clevel= response.main.sea_level;
+        // const acc = response.weather[0].description;
+        // console.log(acc);
+
+        const divElement = document.querySelector("#weather-info");
+        divElement.innerHTML=`
+        "Temperature:" ${temp} <br>
+        "country:" ${ctry} <br>
+        "Timezone:" ${tzone} <br>
+        "Sea level:" ${clevel}
+
+        
+        `;
+        // divElement.textContent = temp;
+      }
+
+    </script>
+  </body>
+</html>

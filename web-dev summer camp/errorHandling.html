@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function divide(a,b){
+//             if(b===0){
+//                 throw new Error("dividing by 0");
+//             }
+//             return a/b;
+//         }
+// console.log(1);
+// let num1=10, num2=0;
+// try{
+//     console.log(divide(num1,num2));
+// }
+// catch(err){
+//     console.log("error occured");
+//             console.log(err);
+//             console.log(typeof err);
+//             console.log(err.name);
+//             console.log(err.message);
+
+
+
+// }
+
+
+async function getWeather(){
+    const url = `https://api123.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=27345421359c6aa37d67bde8514ed4d0`;
+            
+            try {
+                // console.log("a");
+                const responseVar = await fetch(url);
+                if(responseVar.ok){
+                    const jsonData= await responseVar.json();
+                }
+                else{
+                    throw new Error("Data not fetched");
+                }
+                // console.log(responseVar);
+                // console.log("b");
+                // const jsonData = await responseVar.json();
+                // console.log("c");
+                // const main = jsonData.main;
+                // const temp = main.temp;
+
+                // console.log(temp);
+            }
+            catch(err){
+                console.log("Error occured");
+                console.log(err);
+                console.log(err.name);
+                console.log(err.message);
+            }
+
+        }
+
+        getWeather()
+
+
+
+
+
+        // let variable=10;
+        // console.log(variable);
+
+        
+        // try{
+        //     console.log(variable2);
+
+        // }
+        // catch(err){
+        //     console.log("error occured");
+        //     console.log(err);
+        //     console.log(typeof err);
+        //     console.log(err.name);
+        //     console.log(err.message);
+
+        // }
+    </script>
+</body>
+</html>
